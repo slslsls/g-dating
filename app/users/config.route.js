@@ -9,9 +9,9 @@
 
   function config($routeProvider) {
     $routeProvider
-      .when('/', {
-        templateUrl: 'app/home/home.html',
-        controller: 'Home as home'
+      .when('/register', {
+        templateUrl: 'app/users/register.html',
+        controller: 'Register as register'
       });
   }
-})();
+}());

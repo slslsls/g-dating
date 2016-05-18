@@ -9,10 +9,37 @@
   <link href="./css/main.css" rel="stylesheet" media="screen">
 </head>
 <body>
-  <h1>Header</h1>
-  <div ng-view>
-  <h1>Footer</h1>
+  <div>
+    <h3>
+      gDating
+      <span>
+        <a href="">
+          Login
+        </a>
+        |
+        <a href="">
+          Register
+        </a>
+      </span>
+      <span>
+        <a href="">
+          Search
+        </a>
+        |
+        <a href="">
+          My Profile
+        </a>
+        |
+        <a href="">
+          Logout
+        </a>
+      </span>
+    </h3>
   </div>
+  <div ng-view></div>
+  <h3>
+    Copyright gDating
+  </h3>
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.js"></script>
   <script src="app/app.js"></script>
@@ -20,5 +47,9 @@
   <script src="app/home/config.route.js"></script>
   <script src="app/home/Home.controller.js"></script>
   <script src="app/home/Home.service.js"></script>
+
+  <script src="app/users/config.route.js"></script>
+  <script src="app/users/Register.controller.js"></script>
+  <script src="app/users/Register.service.js"></script>
 </body>
 </html>

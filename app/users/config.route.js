@@ -12,6 +12,10 @@
       .when('/register', {
         templateUrl: 'app/users/register.html',
         controller: 'Register as register'
+      })
+      .when('/login', {
+        templateUrl: 'app/users/login.html',
+        controller: 'Login as login'
       });
   }
 }());

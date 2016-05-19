@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="gDating">
+<html lang="en" ng-app="gDating" ng-cloak>
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
@@ -12,17 +12,17 @@
   <div>
     <h3>
       gDating
-      <span>
-        <a href="">
+      <span ng-show="!currentUser">
+        <a href="#/login">
           Login
         </a>
         |
-        <a href="">
+        <a href="#/register">
           Register
         </a>
       </span>
-      <span>
-        <a href="">
+      <span ng-show="currentUser">
+        <a href="#/search">
           Search
         </a>
         |
@@ -53,6 +53,14 @@
   <script src="app/users/Register.service.js"></script>
 
   <script src="app/users/Login.controller.js"></script>
-  <script src="app/users/Login.service.js"></script>
+  <script src="app/users/User.factory.js"></script>
+
+  <script src="app/members/config.route.js"></script>
+  <script src="app/members/Members.controller.js"></script>
+  <script src="app/members/Members.service.js"></script>
+
+  <script src="app/search/config.route.js"></script>
+  <script src="app/search/Search.controller.js"></script>
+  <script src="app/search/Search.service.js"></script>
 </body>
 </html>

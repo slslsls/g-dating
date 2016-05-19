@@ -1,12 +1,43 @@
 <p>{{register.message}}</p>
-<form name="registerForm">
-  <label for="username"></label>
-  <input type="text" name="username" id="username" />
-  <label for="password"></label>
-  <input type="password" name="password" id="password" />
+<form method="POST" action="javascript:void(0)" ng-submit="register.register(user)" name="registerForm">
+  <label for="username">Username</label>
+  <input type="text" ng-model="user.username" name="username" id="username" />
+  <label for="password">Password</label>
+  <input type="password" ng-model="user.password" name="password" id="password" />
   <fieldset>
     <legend>Account Information</legend>
-      <input type="text" name="name" value="">
+    <label for="firstName">First Name</label>
+    <input type="text" ng-model="user.names.firstName" name="firstName">
+    <label for="lastName">Last Name</label>
+    <input type="text" ng-model="user.names.lastName" name="lastName">
+    <label for="description">Description</label>
+    <textarea ng-model="user.description" name="description"></textarea>
+    <label for="avatar">Avatar URL</label>
+    <input type="text" ng-model="user.avatar" name="avatar">
+    <label for="email">Email</label>
+    <input type="text" ng-model="user.email" name="email">
+    <label for="dob">Date of Birth (YYYY-MM-DD)</label>
+    <input type="text" ng-model="user.dob" name="dob">
+    <label for="phone">Phone</label>
+    <input type="text" ng-model="user.phone" name="phone">
+    <label for="zipCode">Zip Code</label>
+    <input type="text" ng-model="user.address.zipcode" name="zipCode">
+    <input type="hidden" ng-model="user.address.geo.lng" name="lng" value=0>
+    <input type="hidden" ng-model="user.address.geo.lat" name="lat" value=0>
+    <label for="suite">Suite</label>
+    <input type="text" ng-model="user.address.suite" name="suite">
+    <label for="city">City</label>
+    <input type="text" ng-model="user.address.city" name="city">
+    <label for="street">Street</label>
+    <input type="text" ng-model="user.address.street" name="street">
+    <label for="website">Website</label>
+    <input type="text" ng-model="user.website" name="website">
+    <label for="slug">Slug</label>
+    <input type="text" ng-model="user.slug" name="slug">
+    <label for="gender">Gender</label>
+    <input type="number" ng-model="user.gender" name="gender">
+    <label for="interestedIn">Interested In</label>
+    <input type="number" ng-model="user.interestedIn" name="interestedIn">
   </fieldset>
   <input type="submit" value="Create An Account">
 </form>

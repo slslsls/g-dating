@@ -37,7 +37,7 @@
       },
       getAllUsers: function() {
         return $http.get(api + '/members');
-      }
+      },
       getSingleUser: function(id) {
         return $http.get(api + '/members/' + id);
       },

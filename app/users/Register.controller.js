@@ -5,7 +5,9 @@
     .module('gDating')
     .controller('Register', Register);
 
-  function Register() {
+  Register.$inject = ['UserFactory', '$location'];
+
+  function Register(UserFactory, $location) {
     var vm = this;
 
     vm.message = 'Message from the Register controller';

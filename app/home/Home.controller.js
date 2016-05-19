@@ -5,7 +5,9 @@
     .module('gDating')
     .controller('Home', Home);
 
-  function Home() {
+  Home.$inject = ['User'];
+
+  function Home(User) {
     var vm = this;
 
     vm.message = 'Message from the Home controller';

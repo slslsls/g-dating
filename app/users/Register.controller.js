@@ -5,16 +5,16 @@
     .module('gDating')
     .controller('Register', Register);
 
-  Register.$inject = ['UserFactory', '$location'];
+  Register.$inject = ['User', '$location'];
 
-  function Register(UserFactory, $location) {
+  function Register(User, $location) {
     var vm = this;
 
     vm.message = 'Message from the Register controller';
     vm.register = function(user) {
-      UserFactory.register(user).then(function(data) {
-        UserFactory.setCurrentUser(data);
-        $location.path(api + '/members');
+      User.register(user).then(function(data) {
+        User.setCurrentUser(data);
+        $location.path('/members');
       }).catch(function(data) {
         vm.errors = data.data;
       });

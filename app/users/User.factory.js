@@ -3,11 +3,11 @@
 
   angular
     .module('gDating')
-    .factory('UserFactory', UserFactory);
+    .factory('User', User);
 
-  UserFactory.$inject = ['$http', '$window'];
+  User.$inject = ['$http', '$window', '$location'];
 
-  function UserFactory($http, $window) {
+  function User($http, $window, $location) {
     var user = {};
     var api = 'http://galvanize-student-apis.herokuapp.com/gdating';
 
@@ -22,6 +22,7 @@
         user = null;
         console.log('just logged out', user);
         $window.localStorage.clear();
+        $location.path('/');
       },
       register: function(user) {
         return $http.post(api + '/auth/register');

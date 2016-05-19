@@ -9,7 +9,7 @@
   <link href="./css/main.css" rel="stylesheet" media="screen">
 </head>
 <body>
-  <div>
+  <div ng-controller="Index as index">
     <h3>
       gDating
       <span ng-show="!currentUser">
@@ -30,7 +30,7 @@
           My Profile
         </a>
         |
-        <a href="">
+        <a href="#/logout">
           Logout
         </a>
       </span>
@@ -44,20 +44,19 @@
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.js"></script>
   <script src="app/app.js"></script>
 
+  <script src="app/Index.controller.js"></script>
+
   <script src="app/home/config.route.js"></script>
   <script src="app/home/Home.controller.js"></script>
-  <script src="app/home/Home.service.js"></script>
 
   <script src="app/users/config.route.js"></script>
   <script src="app/users/Register.controller.js"></script>
-  <script src="app/users/Register.service.js"></script>
-
   <script src="app/users/Login.controller.js"></script>
   <script src="app/users/User.factory.js"></script>
+  <script src="app/users/AuthInterceptor.factory.js"></script>
 
   <script src="app/members/config.route.js"></script>
   <script src="app/members/Members.controller.js"></script>
-  <script src="app/members/Members.service.js"></script>
 
   <script src="app/search/config.route.js"></script>
   <script src="app/search/Search.controller.js"></script>

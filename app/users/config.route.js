@@ -16,6 +16,15 @@
       .when('/login', {
         templateUrl: 'app/users/login.html',
         controller: 'Login as login'
-      });
+      })
+      .when('/logout', {
+        restricted: true,
+        resolve: {
+          app: function(User, $location) {
+            User.logout();
+            $location.path('/login');
+          }
+        }
+      })
   }
 }());

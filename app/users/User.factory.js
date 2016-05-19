@@ -1,8 +1,6 @@
 (function() {
   'use strict';
 
-  var api = 'http://galvanize-student-apis.herokuapp.com/gdating';
-
   angular
     .module('gDating')
     .factory('UserFactory', UserFactory);
@@ -11,6 +9,7 @@
 
   function UserFactory($http, $window) {
     var user = {};
+    var api = 'http://galvanize-student-apis.herokuapp.com/gdating';
 
     return {
       currentUser: function() {
@@ -24,7 +23,7 @@
         console.log('just logged out', user);
         $window.localStorage.clear();
       },
-      signup: function(user) {
+      register: function(user) {
         return $http.post(api + '/auth/register');
       },
       setCurrentUser: function(data) {

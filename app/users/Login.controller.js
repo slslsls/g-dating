@@ -14,7 +14,7 @@
     vm.login = function(user) {
       UserFactory.login(user).then(function(data) {
         UserFactory.setCurrentUser(data);
-        $location.path('/users');
+        $location.path(api + '/members');
       }).catch(function(data) {
         vm.errors = data.errors;
       });

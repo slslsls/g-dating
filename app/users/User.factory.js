@@ -37,14 +37,11 @@
       getCurrentUser: function() {
         return JSON.parse($window.localStorage.getItem('user'));
       },
-      getAllMembers: function() {
-        return $http.get(api + '/members');
-      },
-      getSingleMember: function(id) {
-        return $http.get(api + '/members/' + id);
-      },
-      editProfile: function(user) {
+      editAccount: function(user) {
         return $http.put(api + '/members/' + user.id, user);
+      },
+      deleteAccount: function(user) {
+        return $http.delete(api + '/members/' + user.id)
       }
     }
   }

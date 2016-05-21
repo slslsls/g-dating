@@ -17,8 +17,8 @@
           currentUser: function(User) {
             return User.getCurrentUser();
           },
-          members: function(User) {
-            return User.getAllMembers();
+          members: function(Members) {
+            return Members.getAllMembers();
           }
         }
       });

@@ -11,7 +11,16 @@
     $routeProvider
       .when('/search', {
         templateUrl: 'app/search/search.html',
-        controller: 'Search as search'
+        controller: 'Search as search',
+        restricted: true,
+        resolve: {
+          currentUser: function(User) {
+            return User.getCurrentUser();
+          },
+          members: function(User) {
+            return User.getAllMembers();
+          }
+        }
       });
   }
 }());

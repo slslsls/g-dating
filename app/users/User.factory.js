@@ -25,28 +25,26 @@
         $location.path('/');
       },
       register: function(user) {
-        return $http.post(api + '/auth/register');
+        // put logic here to use zip code for longitude and latitude: http://www.w3schools.com/html/html5_geolocation.asp
+        return $http.post(api + '/auth/register', user);
       },
       setCurrentUser: function(data) {
-        user = data.data.user;
+        user = data.data.data;
         console.log('just setCurrentUser', user);
-        $window.localStorage.setItem('token', data.data.token);
-        $window.localStorage.setItem('user', JSON.stringify(data.data.user));
+        $window.localStorage.setItem('token', user.token);
+        $window.localStorage.setItem('user', JSON.stringify(user.data));
       },
       getCurrentUser: function() {
         return JSON.parse($window.localStorage.getItem('user'));
       },
-      getAllUsers: function() {
+      getAllMembers: function() {
         return $http.get(api + '/members');
       },
-      getSingleUser: function(id) {
+      getSingleMember: function(id) {
         return $http.get(api + '/members/' + id);
       },
-      editUser: function(user) {
+      editProfile: function(user) {
         return $http.put(api + '/members/' + user.id, user);
-      },
-      removeUser: function(user) {
-        return $http.delete(api + '/members/' + user.id)
       }
     }
   }

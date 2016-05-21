@@ -11,7 +11,15 @@
     $routeProvider
       .when('/', {
         templateUrl: 'app/home/home.html',
-        controller: 'Home as home'
+        controller: 'Home as home',
+        resolve: {
+          currentUser: function(User) {
+            return User.getCurrentUser();
+          },
+          members: function(User) {
+            return User.getAllMembers();
+          }
+        }
       });
   }
 })();

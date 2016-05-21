@@ -11,8 +11,8 @@
 <body>
   <div ng-controller="Index as index">
     <h3>
-      gDating
-      <span ng-show="!currentUser">
+      <a href="#">gDating</a>
+      <span ng-if="!index.currentUser">
         <a href="#/login">
           Login
         </a>
@@ -21,12 +21,12 @@
           Register
         </a>
       </span>
-      <span ng-show="currentUser">
+      <span ng-if="index.currentUser">
         <a href="#/search">
           Search
         </a>
         |
-        <a href="">
+        <a href="#/">
           My Profile
         </a>
         |

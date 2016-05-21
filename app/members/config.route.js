@@ -11,7 +11,16 @@
     $routeProvider
       .when('/members', {
         templateUrl: 'app/members/members.html',
-        controller: 'Members as members'
+        controller: 'Members as members',
+        restricted: true,
+        resolve: {
+          currentUser: function(User) {
+            return User.getCurrentUser();
+          },
+          members: function(User) {
+            return User.getAllMembers;
+          }
+        }
       });
   }
 }());

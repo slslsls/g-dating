@@ -2,6 +2,19 @@
   display: none !important;
 }
 
-.members-div {
-  width: 50%;
+.member-list {
+  width: 40%;
+  display: inline-block;
+}
+
+.member-focus {
+  display: inline-block;
+  position: fixed;
+  background-color: coral;
+  padding: 20px;
+  margin: 20px;
+}
+
+h3:hover, img:hover {
+  cursor: pointer;
 }

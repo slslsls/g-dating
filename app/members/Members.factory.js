@@ -12,16 +12,16 @@
 
     return {
       genders: [
-        'male',
-        'female',
-        'transgender',
-        'non-binary'
+        'Male',
+        'Female',
+        'Transgender',
+        'Non-binary'
       ],
       interestedIns: [
-        'men',
-        'women',
-        'transgender',
-        'non-binary'
+        'Men',
+        'Women',
+        'Transgender',
+        'Non-binary'
       ],
       getAllMembers: function() {
         return $http.get(api + '/members');

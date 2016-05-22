@@ -1,4 +1,4 @@
-<div class="members-div">
+<div class="member-list">
   <table>
     <thead>
       <tr>
@@ -10,10 +10,10 @@
     <tbody>
       <tr ng-repeat="member in members.members track by $index">
         <td>
-          <img src={{member.avatar}} alt="member picture" />
+          <img ng-click="members.memberFocus = member" src={{member.avatar}} alt="member picture" />
         </td>
         <td>
-          <h3>{{member.username}}</h3>
+          <h3 ng-click="members.memberFocus = member">{{member.username}}</h3>
           <h5>
             Age: {{member.age}}
             <span ng-if="member.gender">
@@ -26,6 +26,32 @@
             </span>
           </h5>
           <p>{{member.description}}</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="member-focus">
+  <table>
+    <tbody>
+      <tr>
+        <td>
+          <img src={{members.memberFocus.avatar}} alt="member picture" />
+        </td>
+        <td>
+          <h3>{{members.memberFocus.username}}</h3>
+          <h5>
+            Age: {{members.memberFocus.age}}
+            <span ng-if="members.memberFocus.gender">
+              |
+              Gender: {{members.memberFocus.gender}}
+            </span>
+            <span ng-if="members.memberFocus.interestedIn">
+              |
+              Interested in: {{members.memberFocus.interestedIn}}
+            </span>
+          </h5>
+          <p>{{members.memberFocus.description}}</p>
         </td>
       </tr>
     </tbody>

@@ -32,10 +32,10 @@
         user = data.data.data;
         console.log('just setCurrentUser', user);
         $window.localStorage.setItem('token', user.token);
-        $window.localStorage.setItem('user', JSON.stringify(user.data));
+        $window.localStorage.setItem('user', user.data);
       },
       getCurrentUser: function() {
-        return JSON.parse($window.localStorage.getItem('user'));
+        return $window.localStorage.getItem('user');
       },
       editAccount: function(user) {
         return $http.put(api + '/members/' + user.id, user);

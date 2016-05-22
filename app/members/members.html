@@ -1,1 +1,24 @@
-<p>{{members.message}}</p>
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th colspan="2">
+          <h2>Sorting Options...</h2>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="member in members.members track by $index">
+        <td>
+          <img src={{member.avatar}} alt="member picture" />
+        </td>
+        <td>
+          <h1>{{member.username}}</h1>
+          <h2>{{member.age}}</h2>
+          <h2>{{member.interstedIn}}</h2>
+          <p>{{member.description}}</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -5,9 +5,14 @@
     .module('gDating')
     .controller('Members', Members);
 
-  function Members() {
+  function Members(Members) {
     var vm = this;
 
-    vm.message = 'Message from the Members controller';
+    vm.members = [];
+    Members.getAllMembers().then(function(data) {
+      for (var i = 5; i < 25; i++) {
+        vm.members.push(data.data.data[i]);
+      }
+    })
   }
 }());

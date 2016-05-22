@@ -1,0 +1,81 @@
+<div class="profile-edit">
+  <form method="POST" action="javascript:void(0)" ng-submit="editProfile(user)" name="registerForm">
+    <label for="username">Username</label>
+    <input type="text" ng-model="user.username" name="username" id="username" />
+    <label for="password">Password</label>
+    <input type="password" ng-model="user.password" name="password" id="password" placeholder="8 characters" />
+    <fieldset>
+      <legend>Account Information</legend>
+      <label for="firstName">First Name</label>
+      <input type="text" ng-model="user.names.firstName" name="firstName" ng-value="profile.user.names.firstName">
+      <label for="lastName">Last Name</label>
+      <input type="text" ng-model="user.names.lastName" name="lastName" ng-value="profile.user.names.lastName">
+      <!-- <br>
+      <label for="description">Description</label>
+      <textarea ng-model="user.description" name="description"></textarea>
+      <br>
+      <label for="avatar">Avatar URL</label>
+      <input type="text" ng-model="user.avatar" name="avatar"> -->
+      <label for="avatar">Avatar URL</label>
+      <input type="text" ng-model="user.avatar" name="avatar" ng-value="profile.user.avatar">
+      <br>
+      <label for="email">Email</label>
+      <input type="email" ng-model="user.email" name="email" ng-value="profile.user.email">
+      <br>
+      <label for="dob">Date of Birth (YYYY-MM-DD)</label>
+      <input type="text" ng-model="user.dob" name="dob" placeholder="Must be 18" ng-value="profile.user.dob">
+      <br>
+      <!-- <label for="phone">Phone</label>
+      <input type="text" ng-model="user.phone" name="phone">
+      <br>
+      <label for="zipCode">Zip Code</label>
+      <input type="text" ng-model="user.address.zipcode" name="zipCode"> -->
+      <label for="lng">Longitude</label>
+      <input type="number" ng-model="user.address.geo.lng" name="lng" id="lng" ng-value="profile.user.address.geo.lng">
+      <label for="lat">Latitude</label>
+      <input type="number" ng-model="user.address.geo.lat" name="lat" id="lat" ng-value="profile.user.address.geo.lat">
+      <!-- <label for="suite">Suite</label>
+      <input type="text" ng-model="user.address.suite" name="suite">
+      <label for="city">City</label>
+      <input type="text" ng-model="user.address.city" name="city">
+      <label for="street">Street</label>
+      <input type="text" ng-model="user.address.street" name="street"> -->
+      <br>
+      <label for="slug">Slug</label>
+      <input type="text" ng-model="user.slug" name="slug" ng-value="profile.user.slug">
+      <br>
+      <!-- <label for="gender">Gender</label>
+      <input type="number" ng-model="user.gender" name="gender" placeholder="optional"> -->
+      <label for="interestedIn">Interested In</label>
+      <input type="number" ng-model="user.interestedIn" name="interestedIn" placeholder="optional" ng-value="profile.user.interestedIn">
+    </fieldset>
+    <input type="submit" value="Create An Account">
+  </form>
+</div>
+<div class="profile-view">
+  <table ng-model="user">
+    <tbody>
+      <tr>
+        <td>
+          <img src={{profile.user.avatar}} alt="member picture" />
+        </td>
+        <td>
+          <h3>{{profile.user.username}}</h3>
+          <h5>{{profile.user.names.firstName}} {{profile.user.names.lastName}}</h5>
+          <h5>
+            Age: {{profile.user.age}}
+            <span ng-if="user.gender">
+              |
+              Gender: {{profile.user.gender}}
+            </span>
+            <span ng-if="profile.user.interestedIn">
+              |
+              Interested in: {{profile.user.interestedIn}}
+            </span>
+          </h5>
+          <p>{{profile.user.description}}</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

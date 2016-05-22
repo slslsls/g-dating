@@ -54,6 +54,13 @@
           <p>{{members.memberFocus.description}}</p>
         </td>
       </tr>
+      <tr>
+        <h5>
+          <span ng-if="member.popular">Popular!</span>
+          <span ng-if="member.near">Near You!</span>
+          <span ng-if="member.likes">Likes You!</span>
+        </h5>
+      </tr>
     </tbody>
   </table>
 </div>

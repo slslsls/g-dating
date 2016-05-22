@@ -28,6 +28,11 @@
             $location.path('/login');
           }
         }
+      })
+      .when('/profile', {
+        restricted: true,
+        templateUrl: 'app/users/profile.html',
+        controller: 'Profile as profile'
       });
   }
 }());

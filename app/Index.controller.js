@@ -12,7 +12,7 @@
 
     vm.message = 'Message from the Index controller';
     $scope.$watch(User.currentUser, function(user) {
-      vm.currentUser = User.currentUser();
+      vm.currentUser = User.getCurrentUser();
     });
     vm.logout = function() {
       User.logout();

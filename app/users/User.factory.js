@@ -34,14 +34,17 @@
         $window.localStorage.setItem('token', user.token);
         $window.localStorage.setItem('user', user.data);
       },
+      getProfile: function(user) {
+        return $http.get(api + '/members/' + user._id)
+      },
       getCurrentUser: function() {
         return $window.localStorage.getItem('user');
       },
       editAccount: function(user) {
-        return $http.put(api + '/members/' + user.id, user);
+        return $http.put(api + '/members/' + user._id, user);
       },
       deleteAccount: function(user) {
-        return $http.delete(api + '/members/' + user.id)
+        return $http.delete(api + '/members/' + user._id)
       }
     }
   }

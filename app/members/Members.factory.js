@@ -25,9 +25,6 @@
       ],
       getAllMembers: function() {
         return $http.get(api + '/members');
-      },
-      getSingleMember: function(id) {
-        return $http.get(api + '/members/' + id);
       }
     }
   }

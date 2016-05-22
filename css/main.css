@@ -18,3 +18,17 @@
 h3:hover, img:hover {
   cursor: pointer;
 }
+
+.profile-edit {
+  width: 50%;
+  display: inline-block;
+}
+
+.profile-view {
+  min-height: 300px;
+  display: inline-block;
+  position: fixed;
+  background-color: coral;
+  padding: 20px;
+  margin: 20px;
+}

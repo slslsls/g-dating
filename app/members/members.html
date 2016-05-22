@@ -1,4 +1,4 @@
-<div>
+<div class="members-div">
   <table>
     <thead>
       <tr>
@@ -14,9 +14,17 @@
         </td>
         <td>
           <h3>{{member.username}}</h3>
-          <h5>Age: {{member.age}}</h5>
-          <h5>Gender: {{member.gender}}</h5>
-          <h5>Interested in: {{member.interestedIn}}</h5>
+          <h5>
+            Age: {{member.age}}
+            <span ng-if="member.gender">
+              |
+              Gender: {{member.gender}}
+            </span>
+            <span ng-if="member.interestedIn">
+              |
+              Interested in: {{member.interestedIn}}
+            </span>
+          </h5>
           <p>{{member.description}}</p>
         </td>
       </tr>
